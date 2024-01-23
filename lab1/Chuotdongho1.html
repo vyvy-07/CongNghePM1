@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+      #clock {
+        font-size: 24px;
+        font-family: 'Arial', sans-serif;
+        text-align: center;
+        margin-top: 50px;
+        cursor: pointer;
+        color: black;
+        transition: color 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clock"></div>
+
+    <script>
+      $(document).ready(function () {
+        var clockContainer = $('#clock');
+
+        function updateClock() {
+          var currentTime = new Date();
+          var hours = currentTime.getHours();
+          var minutes = currentTime.getMinutes();
+          var seconds = currentTime.getSeconds();
+
+          var timeString = hours + ':' + minutes + ':' + seconds;
+
+          clockContainer.text(timeString);
+        }
+
+        setInterval(updateClock, 1000);
+
+        clockContainer.mouseover(function () {
+          clockContainer.css('color', 'red');
+        });
+
+        clockContainer.mouseout(function () {
+          clockContainer.css('color', 'black');
+        });
+      });
+    </script>
+  </body>
+</html>

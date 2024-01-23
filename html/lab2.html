@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <style>
+    .thumb {
+      transition: 0.3s;
+      border: 1px solid transparent;
+    }
+    .thumb:hover {
+      transition: 0.3s;
+      border: 1px solid red;
+      border-radius: 30px;
+    }
+    .test {
+      transition: 0.3s;
+    }
+    .desc {
+      opacity: 0;
+      transition: 0.3s;
+
+      pointer-events: none;
+    }
+
+    .thumb:hover .desc {
+      opacity: 1;
+      transition: 0.3s;
+      pointer-events: auto;
+    }
+    .thumb:hover .test {
+      transition: 0.3s;
+      opacity: 0;
+    }
+    .pop {
+      width: 200px;
+      height: 200px;
+      top: 100px;
+
+      left: -204px;
+      transition: 0.3s;
+      position: relative;
+      z-index: 4;
+      opacity: 0;
+      border: 1px solid transparent;
+    }
+    .images:hover .pop {
+      transition: 0.3s;
+      border: 1px solid red;
+      opacity: 1;
+    }
+  </style>
+  <body>
+    <div class="grid grid-rows-auto grid-cols-12">
+      <div class="col-span-12">
+        <img
+          class="max-h-[200px] h-full w-full object-cover overflow-hiden"
+          src="../img/Australia1.jpg"
+          alt=""
+        />
+      </div>
+
+      <div
+        class="col-start-1 col-end-3 bg-yellow-100 w-full h-screen gap-4 flex flex-col items-center justify-start p-8"
+      >
+        <h2 class="text-[20px] text-red-400 font-bold uppercase">Tin Tức</h2>
+        <a
+          href=""
+          class="uppercase text-orange-400 text-[18px] font-bold underline"
+          >Kinh tế</a
+        >
+        <a
+          href="../htmlsp/kt_ct.html"
+          class="uppercase text-orange-400 text-[18px] font-bold underline"
+        >
+          Chính trị</a
+        >
+      </div>
+
+      <div class="col-start-3 col-end-13 bg-blue-100 p-7 h-screen">
+        <div>
+          <h1 class="text-center text-black font-bold text-[18px] mb-3">
+            Chính phủ ra quyết định...
+          </h1>
+          <div class="flex">
+            <img
+              src="../img/cp1.jpg"
+              class="w-[180px] w-full h-[150px] object-cover mr-5"
+              alt=""
+            />
+            <p class="des block">
+              Trong xuất bản và thiết kế đồ họa, Lorem ipsum là một văn bản giữ
+              chỗ thường được sử dụng để thể hiện hình thức trực quan của một
+              tài liệu hoặc một kiểu chữ mà không cần dựa vào nội dung có ý
+              nghĩa. Lorem ipsum có thể được sử dụng làm phần giữ chỗ trước khi
+              có bản sao cuối. Trong xuất bản và thiết kế đồ họa, Lorem ipsum là
+              một văn bản giữ chỗ thường được sử dụng để thể hiện hình thức trực
+              quan của một tài liệu hoặc một kiểu chữ mà không cần dựa vào nội
+              dung có ý nghĩa. Lorem ipsum có thể được sử dụng làm phần giữ chỗ
+              trước khi có bản sao cuối. Lorem ipsum có thể được sử dụng làm
+              phần giữ chỗ trước khi có bản sao cuối.
+            </p>
+          </div>
+          <p class="mt-2">
+            Trong xuất bản và thiết kế đồ họa, Lorem ipsum là một văn bản giữ
+            chỗ thường được sử dụng để thể hiện hình thức trực quan của một tài
+            liệu hoặc một kiểu chữ mà không cần dựa vào nội dung có ý nghĩa.
+            Lorem ipsum có thể được sử dụng làm phần giữ chỗ trước khi có bản
+            sao cuối
+          </p>
+        </div>
+
+        <div class="thumb p-7 hover:bg-red-200 mt-5">
+          <p class="test font-bold mb-5">Bài 2: Hover Thumbnail</p>
+
+          <div class="relative h-[200px] flex">
+            <img
+              class="absolute w-full h-full object-cover"
+              src="../img/xe.jpg"
+              alt=""
+            />
+          </div>
+          <div class="desc mt-4">
+            <h1 class="font-bold">Australia in night</h1>
+            <p>
+              Trong xuất bản và thiết kế đồ họa, Lorem ipsum là một văn bản giữ
+              chỗ thường được sử dụng để thể hiện hình thức trực quan của một
+              tài liệu hoặc một kiểu chữ
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="popup flex p-7 mt-5 flex-row-reverse max-w-[1220px] w-full my-0 mx-auto"
+    >
+      <div class="images relative w-[250px] h-[200px]">
+        <img
+          class="absolute w-full h-full object-cover"
+          src="../img/xe.jpg"
+          alt=""
+        />
+        <div class="pop bg-green-100 p-3">
+          <h2 class="text-[20px] text-red-400 font-bold uppercase">
+            Bông Điên Điển
+          </h2>
+          <p>phiện hình thức trực quan của một tài liệu hoặc một kiểu chữ</p>
+        </div>
+      </div>
+      <div class="mt-4 flex flex-1 flex-col">
+        <h2 class="text-[20px] text-red-400 font-bold uppercase">Bài 3</h2>
+        <p>
+          Trong xuất bản và thiết kế đồ họa, Lorem ipsum là một văn bản giữ chỗ
+          thường được sử dụng để thể hiện hình thức trực quan của một tài liệu
+          hoặc một kiểu chữ Trong xuất bản và thiết kế đồ họa, Lorem ipsum là
+          một văn bản giữ chỗ thường được sử dụng để thể hiện hình thức trực
+          quan của một tài liệu hoặc một kiểu chữ Trong xuất bản và thiết kế đồ
+          họa, Lorem ipsum là một văn bản giữ chỗ thường được sử dụng để thể
+          hiện hình thức trực quan của một tài liệu hoặc một kiểu chữ
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

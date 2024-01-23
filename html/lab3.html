@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 3</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <style>
+    .input {
+      border: 1px solid black;
+      /* margin-left: 100px; */
+      padding-left: 20px;
+      padding: 10px 20px;
+    }
+    .btn {
+      border: 1px solid black;
+      background-color: #eee;
+      padding: 10px 20px;
+    }
+
+    .errors,
+    .error {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .errors.active,
+    .error.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  </style>
+  <body class="p-4">
+    <h1
+      class="text-3xl text-center font-bold text-[#0e0e0e] p-2 text-red-400 underline"
+    >
+      Luyện Javascript
+    </h1>
+    <div>
+      <h2 class="text-blue-400 text-2xl font-bold p-3">
+        Nhập 2 số và tính toán với:
+      </h2>
+      <div class="exam1 flex gap-3 pt-7">
+        <input value="0" type="number" class="numb1 border pl-3" />
+        <button class="btn ex">-</button>
+        <button class="btn plus">+</button>
+        <button class="btn nhan">*</button>
+        <button class="btn chia">/</button>
+        <input value="0" type="number" class="numb2 border pl-3" />
+
+        <button type="submit" class="submit p-3">=</button>
+
+        <p
+          value="0"
+          class="value w-[40px] h-[40px] flex items-center just-between"
+        ></p>
+      </div>
+    </div>
+    <div>
+      <h2 class="text-blue-400 text-2xl p-3 font-bold">
+        Exam2: check validate!
+      </h2>
+      <div class="exam2 flex gap-4 pt-3">
+        <label>Name<input type="text" class="input name ml-3 border" /></label>
+        <label>Age<input type="text" class="input age ml-3 border" /></label>
+        <button class="submitExam2">
+          <p class="bg-red-400 w-fit p-3">submit</p>
+          <p class="error text-red-400">something were wrong!</p>
+        </button>
+      </div>
+      <p class="information"></p>
+    </div>
+    <div class="exam3">
+      <h2 class="text-blue-400 text-2xl p-3 font-bold">
+        Exam3: check validate form!
+      </h2>
+      <h3 class="text-blue-400 text-2xl text-center p-3 uppercase font-bold">
+        Log In
+      </h3>
+      <div class="flex gap-3 flex-col max-w-[500px] mx-auto my-o">
+        <label for="name">Tên: </label>
+        <input type="text" class="input" id="name" name="name" />
+
+        <label for="gender"
+          >Giới tính:
+
+          <select id="gender" class="ml-3" name="gender">
+            <option value="male">Nam</option>
+            <option value="female">Nữ</option>
+            <option value="other">Khác</option>
+          </select>
+        </label>
+
+        <label for="dob">Năm sinh: </label>
+        <input class="input" type="date" id="dob" name="dob" />
+
+        <label for="email">Email: </label>
+        <input class="input" type="email" id="email" name="email" />
+
+        <label for="password">Mật khẩu: </label>
+        <input class="input" type="password" id="password" name="password" />
+
+        <label for="confirm_password">Nhập lại mật khẩu: </label>
+        <input
+          type="password"
+          id="confirm_password"
+          class="input"
+          name="confirm_password"
+        />
+        <button type="submit" class="submitExam3">Đăng ký</button>
+      </div>
+
+      <p class="print text-center text-green-400"></p>
+      <p class="errors text-center text-red-400"></p>
+    </div>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

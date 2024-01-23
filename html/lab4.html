@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amthucnambohtm</title>
+    <style type="text/css">
+        .binhthuong {
+            position: relative;
+            color: #000;
+            width: 520px;
+            height: 120px;
+            left: 150px;
+            top: 2px;
+        }
+
+        .bong {
+            position: absolute;
+            color: #000;
+            z-index: -1;
+            width: 520px;
+            height: 120px;
+            text-align: justify;
+            left: 152px;
+            top: 4px;
+        }
+
+        .dropcap {
+            font: bold 200% Arial;
+            border: double;
+            background-color: #FFCC33;
+            color: #FF6600;
+            float: left;
+        }
+
+        .khung {
+            border-style: ridge;
+            border-width: 10px;
+            border-color: #009900;
+            background: #CCFFCC;
+            width: 300px;
+            position: absolute;
+            visibility: hidden;
+              display: inline-block; /* Thêm dòng này */
+        }
+
+        img {
+            float: right; 
+            margin-left: 20px;
+        }
+        body {
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+        }
+        .hinh:hover {
+            visibility: visible;
+
+        }
+        .hover-effect {
+        border: 2px solid #009900;
+        }
+         #monngon img {
+            width: 100%;
+            float: left;
+            max-width: 20px; /* Điều chỉnh kích thước tối đa của hình ảnh */
+            border-radius: 50%; /* Tạo góc bo cho hình ảnh */
+            margin-bottom: 10px; /* Khoảng cách dưới hình ảnh */
+        }
+    </style>
+</head>
+<body>
+    <div class="binhthuong">
+        <div class="bong">
+            <h2 style="text-align:center; color:#FF6600;">Bông điên điển - Món ngon mùa nước nổi</h2>
+      <img src="../img/bong-dien.jpg" alt="Bông điền điền" width="130" class="hinh" onmouseover="Hienkhung()" onmouseout="Chekhung()">
+            <div
+             class="dropcap">M</div>ỗi năm, cứ vào đầu mùa nước nổi, nơi các bờ sông, bờ rạch, bờ ruộng, những cây điên điển chết héo từ những tháng ngày nào tự nhiên xanh tươi trở lại làm đẹp thêm phong cảnh Đồng bằng sông Cửu Long. Chừng một vài tháng sau, khi con nước tràn ngập các bờ sông, bờ ruộng, cũng là lúc điên điển trổ đầy cành những đóa hoa vàng rực màu nắng phương Nam, phất phơ trong ngọn gió hoặc rũ oằn trong những cơn mưa.
+            <p>Trước đây không lâu, người nông dân nghèo khổ dùng bông điên điển nấu cháo cầm cự với cơn đói của những tháng ngày không có khả năng kiếm được tiền. Ngày nay, với những người nghèo, bông điên điển giúp họ có thêm thu nhập bên cạnh việc đánh bắt cá, tép trên những cánh đồng trắng xóa một màu nước nổi. Nhưng để trở thành món ngon, cách giản dị nhất là người ta dùng bông điên điển làm dưa. Chỉ cần ngâm bông điên điển đã lặt rửa sạch với giá sống trong nước muối có độ mặn vừa chuẩn, chừng ba ngày sau là đã có một dĩa dưa vừa chua vừa giòn chấm với nước tương giằm ớt ăn đã ngon mà chấm với cá hoặc thịt kho lại càng ngon hơn.</p>
+        </div>
+    </div>
+
+    <div class="khung" id="monngon" >
+
+       <h2 style="text-align:center;"> Hương vị miền nam</h2>
+         <p><img src="../img/muiten.png" alt="Hình ảnh" width="100"> Bánh tráng, bánh phồng</p>
+         <p><img src="../img/muiten.png" alt="Hình ảnh" width="100"> Bún Mắm </p> 
+         <p><img src="../img/muiten.png" alt="Hình ảnh" width="100"> Cốm dẹt</p>  
+
+    <script language="javascript">
+        function Hienkhung() {
+            khung = document.getElementById("monngon");
+            khung.classList.add("hover-effect"); 
+            khung.style.marginLeft = "300px";
+            khung.style.marginTop = "100px";
+            khung.style.visibility = "visible";
+        }
+
+        function Chekhung() {
+            khung = document.getElementById("monngon");
+            khung.classList.remove("hover-effect");
+            khung.style.visibility = "hidden";
+        }
+    </script>
+</body>
+</html>

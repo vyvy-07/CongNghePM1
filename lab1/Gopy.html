@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đóng Góp Ý Kiến</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h2>Đóng Góp Ý Kiến</h2>
+    <form id="feedbackForm">
+        <table>
+        <tr>
+            <th> <label for="name">Họ và Tên:</label></th>
+            <th><input type="text" id="name" required></th>
+        </tr>
+        <tr>
+            <th> <label for="feedback">Ý Kiến Đóng Góp:</label></th>
+            <th>
+        <textarea id="feedback" cols="21" rows="5" required></textarea></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th>
+               <input type="button" value="Gửi Ý Kiến" onclick="submitForm()">
+            </th>
+        </tr>
+    </table>
+    </form>
+
+    <h2>Ý Kiến Đóng Góp Đã Nhận</h2>
+    <table id="feedbackTable">
+        <thead>
+            <tr>
+                <th>Họ và Tên</th>
+                <th>Ý Kiến Đóng Góp</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Dữ liệu sẽ được thêm vào đây sau khi gửi form -->
+        </tbody>
+    </table>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        emailjs.init("user_your_emailjs_user_id");
+
+        function submitForm() {
+            var name = document.getElementById("name").value;
+            var feedback = document.getElementById("feedback").value;
+
+            // Thêm dữ liệu vào bảng
+            var table = document.getElementById("feedbackTable").getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow(table.rows.length);
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            cell1.innerHTML = name;
+            cell2.innerHTML = feedback;
+
+            // Gửi email
+            var templateParams = {
+                name: name,
+                feedback: feedback
+            };
+
+            emailjs.send("service_your_emailjs_service_id", "template_your_emailjs_template_id", templateParams)
+                .then(function(response) {
+                    console.log("Email sent successfully:", response);
+                }, function(error) {
+                    console.log("Email failed to send:", error);
+                });
+
+            // Xóa nội dung form
+            document.getElementById("name").value = "";
+            document.getElementById("feedback").value = "";
+        }
+    </script>
+</body>
+</html>
